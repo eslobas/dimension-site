@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+/* Dimension — monocromático + acento lima. Raio 4px. */
+:root {
+  --bg: #0e0e10;
+  --surface: #18181b;
+  --fg: #ececea;
+  --muted: #9b9ba3;
+  --line: #2a2a2f;
+  --accent: #c8f031;
+  --accent-fg: #111113;
+}
+:root[data-theme="light"] {
+  --bg: #f4f4f2;
+  --surface: #e9e9e6;
+  --fg: #111113;
+  --muted: #5c5c63;
+  --line: #d6d6d2;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --radius-ui: 4px;
+}
+
+body {
+  overflow-x: clip;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+::selection { background: var(--accent); color: var(--accent-fg); }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  border-radius: var(--radius-ui); padding: .85rem 1.4rem; font-weight: 600; font-size: .9rem;
+  white-space: nowrap; transition: transform .15s cubic-bezier(.16,1,.3,1), background .2s, opacity .2s, border-color .2s;
+}
+.btn:active { transform: scale(.98); }
+.btn-accent { background: var(--accent); color: var(--accent-fg); }
+.btn-accent:hover { filter: brightness(.95); }
+.btn-ghost { border: 1px solid var(--line); color: var(--fg); }
+.btn-ghost:hover { border-color: var(--fg); }
+
+@layer base {
+  *, ::before, ::after { border-color: var(--line); }
+}
