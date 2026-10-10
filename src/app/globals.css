@@ -1,21 +1,14 @@
 @import "tailwindcss";
 
-/* Dimension — monocromático + acento lima. Raio 4px. */
+/* Dimension — escuro azul-noite + branco e azul. Raio 4px. */
 :root {
-  --bg: #0e0e10;
-  --surface: #18181b;
-  --fg: #ececea;
-  --muted: #9b9ba3;
-  --line: #2a2a2f;
-  --accent: #c8f031;
-  --accent-fg: #111113;
-}
-:root[data-theme="light"] {
-  --bg: #f4f4f2;
-  --surface: #e9e9e6;
-  --fg: #111113;
-  --muted: #5c5c63;
-  --line: #d6d6d2;
+  --bg: #0a0f1a;
+  --surface: #121a2b;
+  --fg: #f3f6fc;
+  --muted: #93a2bd;
+  --line: #1e2942;
+  --accent: #4f8cff;
+  --accent-fg: #ffffff;
 }
 
 @theme inline {
