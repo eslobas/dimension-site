@@ -3,8 +3,10 @@ export type Lang = "pt" | "en";
 export const PERFIL = {
   nome: "Diogo Vieira Monteiro",
   email: "diogovieiramonteiro@gmail.com",
+  telefone: "+351 914 295 680",
+  telefoneLink: "+351914295680", // sem espaços, para tel: e WhatsApp
   github: "https://github.com/eslobas",
-  linkedin: "", // preenche com o teu LinkedIn para aparecer
+  linkedin: "https://www.linkedin.com/in/diogo-monteiro-b7742324b/",
 };
 
 type Projeto = { icon: string; titulo: string; texto: string; tags: string[]; link?: string; linkLabel?: string };

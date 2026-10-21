@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import {
   Stack, Code, Plugs, Lightning, Heartbeat, Factory, Package, Wallet,
   ArrowRight, ArrowUpRight, GithubLogo, EnvelopeSimple, LinkedinLogo, Translate, CheckCircle,
+  Phone, WhatsappLogo,
 } from "@phosphor-icons/react";
 import { CONTENT, PERFIL, type Lang } from "@/lib/content";
 
@@ -176,8 +177,10 @@ export default function Site() {
           <p className="mt-4 text-muted max-w-[46ch]">{t.contacto.sub}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href={`mailto:${PERFIL.email}`} className="btn btn-accent"><EnvelopeSimple size={18} weight="bold" /> {PERFIL.email}</a>
-            <a href={PERFIL.github} target="_blank" className="btn btn-ghost"><GithubLogo size={18} weight="bold" /> GitHub</a>
+            <a href={`tel:${PERFIL.telefoneLink}`} className="btn btn-ghost"><Phone size={18} weight="bold" /> {PERFIL.telefone}</a>
+            <a href={`https://wa.me/${PERFIL.telefoneLink.replace("+", "")}`} target="_blank" className="btn btn-ghost"><WhatsappLogo size={18} weight="bold" /> WhatsApp</a>
             {PERFIL.linkedin && <a href={PERFIL.linkedin} target="_blank" className="btn btn-ghost"><LinkedinLogo size={18} weight="bold" /> LinkedIn</a>}
+            <a href={PERFIL.github} target="_blank" className="btn btn-ghost"><GithubLogo size={18} weight="bold" /> GitHub</a>
           </div>
         </div>
       </section>
