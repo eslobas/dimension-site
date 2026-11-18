@@ -1,28 +1,59 @@
-# Dimension — site pessoal
+# Dimension: portfolio & services site
 
-Site pessoal de **Diogo Vieira Monteiro**, engenheiro informático: portfólio e serviços.
-Next.js 15 + Tailwind. Alojado na Vercel, domínio `dimension.pt`.
+Personal portfolio and services website of **Diogo Vieira Monteiro**, front-end focused software engineer.
 
-## Correr localmente
+**Live:** [dimension-rho.vercel.app](https://dimension-rho.vercel.app)
+
+<!-- Add a screenshot: save it as public/screenshot.png and uncomment the line below -->
+<!-- ![Dimension screenshot](public/screenshot.png) -->
+
+## Stack
+
+- **Next.js 15** (App Router, static generation) and **React 19**
+- **TypeScript**
+- **Tailwind CSS 4**
+- **Motion** for animations, **Phosphor** icons
+- Deployed on **Vercel**
+
+## Features
+
+- Bilingual content (Portuguese / English) from a single typed content file
+- Responsive layout, from mobile to wide screens
+- SEO: metadata, `sitemap.xml`, `robots.txt` and Open Graph images generated with `next/og`
+- Content, theme and metadata kept in separate places, so updates don't touch components
+
+## Project structure
+
+```
+src/
+├─ app/
+│  ├─ layout.tsx            metadata / SEO
+│  ├─ page.tsx              page composition
+│  ├─ globals.css           brand colours and theme
+│  ├─ opengraph-image.tsx   generated social preview image
+│  ├─ sitemap.ts, robots.ts
+├─ components/site.tsx      UI sections
+└─ lib/content.ts           typed PT/EN content
+```
+
+## Running locally
+
 ```bash
 npm install
 npm run dev   # http://localhost:3000
 ```
 
-## Editar conteúdo
-- Textos, serviços e projetos: `src/app/page.tsx`
-- Cores da marca e tema: `src/app/globals.css`
-- Metadados / SEO: `src/app/layout.tsx`
+## Optional environment variables (`.env.local` / Vercel)
 
-## Variáveis opcionais (`.env.local` / Vercel)
-| Variável | Para quê |
+| Variable | Purpose |
 |---|---|
-| `NEXT_PUBLIC_SITE_URL` | URL do site (ex.: `https://dimension.pt`) |
-| `NEXT_PUBLIC_EMAIL` | Email de contacto |
-| `NEXT_PUBLIC_GITHUB` | Link do GitHub |
-| `NEXT_PUBLIC_LINKEDIN` | Link do LinkedIn (vazio = não aparece) |
+| `NEXT_PUBLIC_SITE_URL` | Site URL (e.g. `https://dimension.pt`) |
+| `NEXT_PUBLIC_EMAIL` | Contact email |
+| `NEXT_PUBLIC_GITHUB` | GitHub link |
+| `NEXT_PUBLIC_LINKEDIN` | LinkedIn link (empty = hidden) |
 
-## Publicar
+## Deploy
+
 ```bash
 npx vercel deploy --prod
 ```

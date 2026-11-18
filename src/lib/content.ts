@@ -16,7 +16,7 @@ export const CONTENT: Record<Lang, {
   nav: { servicos: string; frontend: string; projetos: string; sobre: string; contacto: string };
   hero: { eyebrow: string; titulo: string; destaque: string; sub: string; cta1: string; cta2: string };
   servicos: { heading: string; intro: string; items: Servico[] };
-  frontend: { heading: string; intro: string; pontos: string[] };
+  frontend: { heading: string; intro: string; stack: string[]; pontos: string[] };
   projetos: { heading: string; intro: string; items: Projeto[] };
   skills: { heading: string; intro: string; grupos: { label: string; items: string[] }[] };
   sobre: { heading: string; p1: string; p2: string; badges: string[] };
@@ -26,10 +26,10 @@ export const CONTENT: Record<Lang, {
   pt: {
     nav: { servicos: "Serviços", frontend: "Frontend", projetos: "Projetos", sobre: "Sobre", contacto: "Contacto" },
     hero: {
-      eyebrow: "Engenharia Informática · Full-Stack",
+      eyebrow: "Engenharia Informática · Frontend & Full-Stack",
       titulo: "Produtos digitais de ponta a ponta,",
       destaque: "do conceito à produção.",
-      sub: "Desenvolvo aplicações web e software à medida — da base de dados ao último pixel. Vários projetos já em produção, incluindo na área da saúde.",
+      sub: "Desenvolvo aplicações web e software à medida — da base de dados ao último pixel, com interfaces em React e Next.js. Vários projetos já em produção, incluindo na área da saúde.",
       cta1: "Ver projetos",
       cta2: "Falar comigo",
     },
@@ -45,18 +45,20 @@ export const CONTENT: Record<Lang, {
     },
     frontend: {
       heading: "Frontend & Websites",
-      intro: "Um departamento dedicado a sites que representam bem o teu negócio — rápidos, modernos e que convertem.",
+      intro: "É no front-end que passo a maior parte do tempo: transformo designs em interfaces rápidas, acessíveis e fiéis ao detalhe — e, como conheço o back-end, ligo-as a dados reais sem atritos.",
+      stack: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Motion"],
       pontos: [
-        "Sites institucionais, landing pages e lojas online",
-        "Design moderno e responsável em qualquer ecrã",
-        "Performance e SEO de origem, prontos para o Google",
-        "Painel para gerires o conteúdo sem depender de ninguém",
+        "Páginas e componentes em React e Next.js (SSR e geração estática) feitos a partir do design",
+        "Componentes reutilizáveis e consistentes, partilhados entre páginas e projetos",
+        "Responsivo em qualquer ecrã, com atenção a acessibilidade, performance e SEO",
+        "Ligação a APIs REST, bases de dados, pagamentos e painéis de gestão",
       ],
     },
     projetos: {
       heading: "Projetos",
       intro: "Uma amostra de trabalho real — alguns já em produção.",
       items: [
+        { icon: "flower", titulo: "AC Flowers — loja online", texto: "Loja para um atelier floral: construtor de bouquets flor a flor com preço ao vivo, escolha de dia e horário de entrega, pagamento com Stripe (cartão, MB WAY, Multibanco) e painel de gestão para a florista — produção do dia, encomendas, produtos e zonas de entrega.", tags: ["Next.js", "TypeScript", "Tailwind", "Supabase", "Stripe"] },
         { icon: "heartbeat", titulo: "Plataforma de rastreabilidade (saúde)", texto: "Aplicação full-stack em produção para um laboratório na área da saúde: controlo de qualidade e rastreabilidade das peças, do registo à entrega, com painel de gestão próprio.", tags: ["Full-stack", "Em produção", "Saúde"] },
         { icon: "factory", titulo: "Gestor de equipamentos industriais", texto: "Software de monitorização e gestão de máquinas e manutenção, com registo de operações e alertas.", tags: ["Python", "Software"], link: "https://github.com/eslobas/industrial-machine-manager", linkLabel: "GitHub" },
         { icon: "package", titulo: "Gestão de stock e encomendas", texto: "Sistema para controlo de inventário e encomendas, com seguimento das melhores condições entre fornecedores.", tags: ["Full-stack", "Gestão"], link: "https://github.com/eslobas/stock-and-order-manager", linkLabel: "GitHub" },
@@ -68,32 +70,33 @@ export const CONTENT: Record<Lang, {
       intro: "Tecnologias e áreas com que trabalho, da formação em Engenharia Informática e de projetos reais.",
       grupos: [
         { label: "Linguagens", items: ["Java", "C", "Python", "JavaScript", "TypeScript", "SQL / PL-SQL", "HTML", "CSS"] },
-        { label: "Web & Frontend", items: ["React", "Next.js", "Node.js", "Tailwind CSS", "APIs REST", "Design responsivo"] },
-        { label: "Dados", items: ["PostgreSQL", "Oracle", "Supabase", "Modelação de dados"] },
+        { label: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Motion", "Design responsivo", "SSR / SSG"] },
+        { label: "Back-end & APIs", items: ["Node.js", "Express", "APIs REST", "Supabase", "Stripe"] },
+        { label: "Dados", items: ["PostgreSQL", "MySQL", "MongoDB", "Oracle", "Modelação de dados"] },
         { label: "Fundamentos", items: ["Estruturas de dados & algoritmos", "POO", "Concorrência", "Redes", "Arquitetura de computadores", "Sistemas operativos"] },
         { label: "Engenharia", items: ["Engenharia de software", "DDD", "Testes", "Git & GitHub", "Scrum", "Linux"] },
       ],
     },
     sobre: {
       heading: "Sobre",
-      p1: "Sou engenheiro informático em formação no ISEP (a entrar no 3.º ano), com foco em desenvolvimento full-stack. Gosto de transformar problemas reais em produtos simples de usar e sólidos por dentro.",
+      p1: "Sou engenheiro informático em formação no ISEP (a entrar no 3.º ano), com foco em desenvolvimento full-stack e front-end em React e Next.js. Gosto de transformar problemas reais em produtos simples de usar e sólidos por dentro.",
       p2: "Já desenvolvi e coloquei em produção aplicações para contextos exigentes, incluindo na área da saúde, onde a fiabilidade e o rigor contam. Trabalho com atenção ao detalhe, da arquitetura à experiência final.",
-      badges: ["3.º ano · Eng. Informática (ISEP)", "Cambridge English — B2 First", "Full-stack"],
+      badges: ["3.º ano · Eng. Informática (ISEP)", "Cambridge English — B2 First", "Frontend & Full-stack"],
     },
     contacto: {
       heading: "Vamos trabalhar juntos",
       sub: "Tens um projeto ou uma vaga em mente? Fala comigo — respondo rápido.",
     },
-    footer: { papel: "Engenheiro informático · Full-stack" },
+    footer: { papel: "Engenheiro informático · Frontend & Full-stack" },
   },
 
   en: {
     nav: { servicos: "Services", frontend: "Frontend", projetos: "Projects", sobre: "About", contacto: "Contact" },
     hero: {
-      eyebrow: "Software Engineering · Full-Stack",
+      eyebrow: "Software Engineering · Frontend & Full-Stack",
       titulo: "End-to-end digital products,",
       destaque: "from concept to production.",
-      sub: "I build web applications and custom software — from the database to the last pixel. Several projects already in production, including in healthcare.",
+      sub: "I build web applications and custom software — from the database to the last pixel, with interfaces in React and Next.js. Several projects already in production, including in healthcare.",
       cta1: "View projects",
       cta2: "Get in touch",
     },
@@ -109,18 +112,20 @@ export const CONTENT: Record<Lang, {
     },
     frontend: {
       heading: "Frontend & Websites",
-      intro: "A dedicated focus on websites that represent your business well — fast, modern and built to convert.",
+      intro: "The front-end is where I spend most of my time: I turn designs into fast, accessible, pixel-faithful interfaces — and because I know the back-end, I connect them to real data without friction.",
+      stack: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Motion"],
       pontos: [
-        "Business sites, landing pages and online stores",
-        "Modern, responsive design on any screen",
-        "Performance and SEO from day one, ready for Google",
-        "A panel to manage your content without depending on anyone",
+        "Pages and components in React and Next.js (SSR and static generation), built from the design",
+        "Reusable, consistent components shared across pages and projects",
+        "Responsive on any screen, with care for accessibility, performance and SEO",
+        "Connected to REST APIs, databases, payments and admin dashboards",
       ],
     },
     projetos: {
       heading: "Projects",
       intro: "A sample of real work — some already in production.",
       items: [
+        { icon: "flower", titulo: "AC Flowers — online shop", texto: "Shop for a flower atelier: a flower-by-flower bouquet builder with live pricing, delivery day and time slots, Stripe payments (card, MB WAY, Multibanco) and an admin dashboard for the florist — daily production, orders, products and delivery zones.", tags: ["Next.js", "TypeScript", "Tailwind", "Supabase", "Stripe"] },
         { icon: "heartbeat", titulo: "Traceability platform (healthcare)", texto: "Full-stack application in production for a healthcare laboratory: quality control and traceability of items, from intake to delivery, with its own management panel.", tags: ["Full-stack", "In production", "Healthcare"] },
         { icon: "factory", titulo: "Industrial equipment manager", texto: "Software for monitoring and managing machines and maintenance, with operation logs and alerts.", tags: ["Python", "Software"], link: "https://github.com/eslobas/industrial-machine-manager", linkLabel: "GitHub" },
         { icon: "package", titulo: "Stock & order management", texto: "A system for inventory and order control, tracking the best conditions across suppliers.", tags: ["Full-stack", "Operations"], link: "https://github.com/eslobas/stock-and-order-manager", linkLabel: "GitHub" },
@@ -132,22 +137,23 @@ export const CONTENT: Record<Lang, {
       intro: "Technologies and areas I work with, from my Software Engineering studies and real projects.",
       grupos: [
         { label: "Languages", items: ["Java", "C", "Python", "JavaScript", "TypeScript", "SQL / PL-SQL", "HTML", "CSS"] },
-        { label: "Web & Frontend", items: ["React", "Next.js", "Node.js", "Tailwind CSS", "REST APIs", "Responsive design"] },
-        { label: "Data", items: ["PostgreSQL", "Oracle", "Supabase", "Data modelling"] },
+        { label: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Motion", "Responsive design", "SSR / SSG"] },
+        { label: "Back-end & APIs", items: ["Node.js", "Express", "REST APIs", "Supabase", "Stripe"] },
+        { label: "Data", items: ["PostgreSQL", "MySQL", "MongoDB", "Oracle", "Data modelling"] },
         { label: "Fundamentals", items: ["Data structures & algorithms", "OOP", "Concurrency", "Networking", "Computer architecture", "Operating systems"] },
         { label: "Engineering", items: ["Software engineering", "DDD", "Testing", "Git & GitHub", "Scrum", "Linux"] },
       ],
     },
     sobre: {
       heading: "About",
-      p1: "I'm a software engineering student at ISEP (entering my 3rd year), focused on full-stack development. I enjoy turning real problems into products that are simple to use and solid underneath.",
+      p1: "I'm a software engineering student at ISEP (entering my 3rd year), focused on full-stack development and React/Next.js front-ends. I enjoy turning real problems into products that are simple to use and solid underneath.",
       p2: "I've built and shipped applications for demanding contexts, including healthcare, where reliability and rigour matter. I work with attention to detail, from architecture to the final experience.",
-      badges: ["3rd year · Software Eng. (ISEP)", "Cambridge English — B2 First", "Full-stack"],
+      badges: ["3rd year · Software Eng. (ISEP)", "Cambridge English — B2 First", "Frontend & Full-stack"],
     },
     contacto: {
       heading: "Let's work together",
       sub: "Have a project or a role in mind? Reach out — I reply fast.",
     },
-    footer: { papel: "Software engineer · Full-stack" },
+    footer: { papel: "Software engineer · Frontend & Full-stack" },
   },
 };

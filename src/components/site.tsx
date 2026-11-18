@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
 import {
-  Stack, Code, Plugs, Lightning, Heartbeat, Factory, Package, Wallet,
+  Stack, Code, Plugs, Lightning, Heartbeat, Factory, Package, Wallet, Flower,
   ArrowRight, ArrowUpRight, GithubLogo, EnvelopeSimple, LinkedinLogo, Translate, CheckCircle,
   Phone, WhatsappLogo, MagnifyingGlass, Command, ArrowElbowDownLeft,
 } from "@phosphor-icons/react";
@@ -12,7 +12,7 @@ import { CopyButton } from "@/components/copy-button";
 
 const ICONS: Record<string, React.ComponentType<{ size?: number; weight?: "duotone" | "bold"; className?: string }>> = {
   stack: Stack, code: Code, plugs: Plugs, lightning: Lightning,
-  heartbeat: Heartbeat, factory: Factory, package: Package, wallet: Wallet,
+  heartbeat: Heartbeat, factory: Factory, package: Package, wallet: Wallet, flower: Flower,
 };
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -207,6 +207,9 @@ export default function Site() {
             <p className="eyebrow">Frontend</p>
             <h2 className="mt-3 h-section text-4xl md:text-[42px]">{t.frontend.heading}</h2>
             <p className="mt-5 text-muted leading-relaxed max-w-[48ch]">{t.frontend.intro}</p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {t.frontend.stack.map((s) => <kbd key={s} className="chip">{s}</kbd>)}
+            </div>
           </Reveal>
           <ul className="space-y-3">
             {t.frontend.pontos.map((p, k) => (
