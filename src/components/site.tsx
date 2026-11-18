@@ -322,6 +322,17 @@ export default function Site() {
           <span className="flex items-center gap-2 font-semibold tracking-[-0.04em] uppercase text-fg"><span className="logo-mark" /> Dimension</span>
           <span>© {new Date().getFullYear()} {PERFIL.nome} · {t.footer.papel}</span>
         </div>
+        <div className="mx-auto max-w-5xl px-4 md:px-8 pb-10">
+          <details id="privacidade" className="group rounded-xl bg-surface px-5 py-4 text-sm text-muted">
+            <summary className="cursor-pointer text-fg select-none">{t.legal.titulo}</summary>
+            <div className="mt-4 space-y-3 max-w-[70ch] leading-relaxed">
+              {t.legal.paragrafos.map(([titulo, texto]) => (
+                <p key={titulo}><strong className="font-medium text-fg">{titulo}.</strong> {texto}</p>
+              ))}
+              <p className="text-xs">{t.legal.atualizado}</p>
+            </div>
+          </details>
+        </div>
       </footer>
     </div>
   );

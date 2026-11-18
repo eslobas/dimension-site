@@ -22,6 +22,7 @@ export const CONTENT: Record<Lang, {
   sobre: { heading: string; p1: string; p2: string; badges: string[] };
   contacto: { heading: string; sub: string };
   footer: { papel: string };
+  legal: { titulo: string; paragrafos: [string, string][]; atualizado: string };
 }> = {
   pt: {
     nav: { servicos: "Serviços", frontend: "Frontend", projetos: "Projetos", sobre: "Sobre", contacto: "Contacto" },
@@ -52,6 +53,7 @@ export const CONTENT: Record<Lang, {
         "Componentes reutilizáveis e consistentes, partilhados entre páginas e projetos",
         "Responsivo em qualquer ecrã, com atenção a acessibilidade, performance e SEO",
         "Ligação a APIs REST, bases de dados, pagamentos e painéis de gestão",
+        "Conformidade legal verificada antes de lançar: RGPD, cookies, Livro de Reclamações e resolução de litígios",
       ],
     },
     projetos: {
@@ -80,14 +82,25 @@ export const CONTENT: Record<Lang, {
     sobre: {
       heading: "Sobre",
       p1: "Sou engenheiro informático em formação no ISEP (a entrar no 3.º ano), com foco em desenvolvimento full-stack e front-end em React e Next.js. Gosto de transformar problemas reais em produtos simples de usar e sólidos por dentro.",
-      p2: "Já desenvolvi e coloquei em produção aplicações para contextos exigentes, incluindo na área da saúde, onde a fiabilidade e o rigor contam. Trabalho com atenção ao detalhe, da arquitetura à experiência final.",
-      badges: ["3.º ano · Eng. Informática (ISEP)", "Cambridge English — B2 First", "Frontend & Full-stack"],
+      p2: "Já desenvolvi e coloquei em produção aplicações para contextos exigentes, incluindo na área da saúde, onde a fiabilidade e o rigor contam. Trabalho com atenção ao detalhe, da arquitetura à experiência final — e em todos os projetos verifico a parte legal (RGPD, cookies, Livro de Reclamações, resolução alternativa de litígios, acessibilidade e segurança dos dados) antes de os pôr online.",
+      badges: ["3.º ano · Eng. Informática (ISEP)", "Cambridge English — B2 First", "Frontend & Full-stack", "RGPD e legalidade verificadas em cada projeto"],
     },
     contacto: {
       heading: "Vamos trabalhar juntos",
       sub: "Tens um projeto ou uma vaga em mente? Fala comigo — respondo rápido.",
     },
     footer: { papel: "Engenheiro informático · Frontend & Full-stack" },
+    legal: {
+      titulo: "Privacidade e informação legal",
+      paragrafos: [
+        ["Responsável", "Diogo Vieira Monteiro, Porto. Para qualquer questão sobre privacidade: diogovieiramonteiro@gmail.com."],
+        ["Cookies e rastreamento", "Este site não usa cookies de estatística, publicidade ou redes sociais, nem serviços de rastreamento. Guarda apenas, no seu navegador, a língua que escolheu (PT/EN), o que é estritamente necessário e não exige consentimento."],
+        ["Alojamento", "O site está alojado na Vercel, que pode registar temporariamente dados técnicos como o endereço IP, por razões de segurança e funcionamento."],
+        ["Contactos", "Se me contactar por email, telefone, WhatsApp ou LinkedIn, uso os seus dados apenas para responder ao pedido e não os partilho com terceiros."],
+        ["Os seus direitos", "Nos termos do RGPD, pode pedir acesso, retificação ou apagamento dos seus dados, ou opor-se ao seu tratamento, pelo email acima. Pode também apresentar reclamação à Comissão Nacional de Proteção de Dados (www.cnpd.pt)."],
+      ],
+      atualizado: "Última atualização: novembro de 2026.",
+    },
   },
 
   en: {
@@ -119,6 +132,7 @@ export const CONTENT: Record<Lang, {
         "Reusable, consistent components shared across pages and projects",
         "Responsive on any screen, with care for accessibility, performance and SEO",
         "Connected to REST APIs, databases, payments and admin dashboards",
+        "Legal compliance checked before launch: GDPR, cookies, complaints book and dispute resolution",
       ],
     },
     projetos: {
@@ -147,13 +161,24 @@ export const CONTENT: Record<Lang, {
     sobre: {
       heading: "About",
       p1: "I'm a software engineering student at ISEP (entering my 3rd year), focused on full-stack development and React/Next.js front-ends. I enjoy turning real problems into products that are simple to use and solid underneath.",
-      p2: "I've built and shipped applications for demanding contexts, including healthcare, where reliability and rigour matter. I work with attention to detail, from architecture to the final experience.",
-      badges: ["3rd year · Software Eng. (ISEP)", "Cambridge English — B2 First", "Frontend & Full-stack"],
+      p2: "I've built and shipped applications for demanding contexts, including healthcare, where reliability and rigour matter. I work with attention to detail, from architecture to the final experience — and on every project I check the legal side (GDPR, cookies, the official complaints book, alternative dispute resolution, accessibility and data security) before it goes live.",
+      badges: ["3rd year · Software Eng. (ISEP)", "Cambridge English — B2 First", "Frontend & Full-stack", "GDPR and legal compliance checked on every project"],
     },
     contacto: {
       heading: "Let's work together",
       sub: "Have a project or a role in mind? Reach out — I reply fast.",
     },
     footer: { papel: "Software engineer · Frontend & Full-stack" },
+    legal: {
+      titulo: "Privacy & legal information",
+      paragrafos: [
+        ["Controller", "Diogo Vieira Monteiro, Porto, Portugal. For any privacy question: diogovieiramonteiro@gmail.com."],
+        ["Cookies & tracking", "This site uses no analytics, advertising or social media cookies, and no tracking services. It only stores your language choice (PT/EN) in your browser, which is strictly necessary and needs no consent."],
+        ["Hosting", "The site is hosted on Vercel, which may temporarily log technical data such as your IP address for security and operation."],
+        ["Contact", "If you contact me by email, phone, WhatsApp or LinkedIn, I only use your data to reply and never share it with third parties."],
+        ["Your rights", "Under the GDPR you can request access, correction or deletion of your data, or object to its processing, via the email above. You may also complain to the Portuguese data protection authority (www.cnpd.pt)."],
+      ],
+      atualizado: "Last updated: November 2026.",
+    },
   },
 };
